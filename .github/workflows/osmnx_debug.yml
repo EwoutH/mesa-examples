@@ -7,6 +7,7 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ["3.10", "3.11", "3.12"]
@@ -24,5 +25,5 @@ jobs:
       run: pip install --upgrade --pre shapely osmnx
 
     - name: Run osmnx_test.py
-      run: |
-        python gis/GIS-Based Traffic Simulation with Mesa/osmnx_test.py
+      run: python osmnx_test.py
+      working-directory: gis/GIS-Based Traffic Simulation with Mesa
