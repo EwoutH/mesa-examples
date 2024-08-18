@@ -47,8 +47,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install --upgrade git+https://github.com/shapely/shapely.git
-        pip install --upgrade git+https://github.com/gboeing/osmnx.git
+        pip install --upgrade --pre shapely
+        pip install git+https://github.com/gboeing/osmnx.git
 
     - name: Run osmnx_test.py
       run: python osmnx_test.py
