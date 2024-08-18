@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  test:
+  test-pre:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -23,6 +23,32 @@ jobs:
 
     - name: Install dependencies
       run: pip install --upgrade --pre shapely osmnx
+
+    - name: Run osmnx_test.py
+      run: python osmnx_test.py
+      working-directory: gis/GIS-Based Traffic Simulation with Mesa
+
+  test-git:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.11", "3.12"]
+
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        pip install git+https://github.com/gboeing/osmnx.git
+        pip install git+https://github.com/shapely/shapely.git
 
     - name: Run osmnx_test.py
       run: python osmnx_test.py
