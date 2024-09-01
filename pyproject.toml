@@ -25,6 +25,7 @@ rl_example = [
     "ray",
     "dm_tree",
     "pyarrow",
+    "typer",
 ]
 
 [build-system]
