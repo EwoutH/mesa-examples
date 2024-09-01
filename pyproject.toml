@@ -21,7 +21,8 @@ rl_example = [
     "stable-baselines3",
     "seaborn",
     "mesa",
-    "tensorboard"
+    "tensorboard",
+    "ray",
 ]
 
 [build-system]
