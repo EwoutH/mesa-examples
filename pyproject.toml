@@ -26,6 +26,8 @@ rl_example = [
     "dm_tree",
     "pyarrow",
     "typer",
+    "scikit-image",
+    "opencv-python",
 ]
 
 [build-system]
