@@ -24,6 +24,7 @@ rl_example = [
     "tensorboard",
     "ray",
     "dm_tree",
+    "pyarrow",
 ]
 
 [build-system]
