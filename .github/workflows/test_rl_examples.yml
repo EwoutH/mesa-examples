@@ -25,11 +25,11 @@ jobs:
       with:
         python-version: "3.12"
     - name: Install uv
-      run: pip install --system uv
+      run: pip install uv
     - name: Install dependencies
-      run: uv pip install mesa pytest
+      run: uv pip install --system mesa pytest
     - name: Install RL dependencies
-      run: uv pip install .[rl_example]
+      run: uv pip install --system .[rl_example]
     - name: Test with pytest
       run: pytest -rA -Werror test_rl_examples.py
 
