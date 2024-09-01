@@ -27,7 +27,7 @@ def get_models(directory):
     return models
 
 
-@pytest.mark.parametrize("model_class", get_models("gis"))
+@pytest.mark.parametrize("model_class", get_models("rl"))
 def test_model_steps(model_class):
     model = model_class()  # Assume no arguments are needed
     for _ in range(10):
