@@ -6,6 +6,7 @@ on:
       - 'rl/**/*.py'  # If a RL model is modified
       - 'test_rl_examples.py'  # If the RL test script is modified
       - '.github/workflows/test_rl_examples.yml'  # If this workflow is modified
+      - 'pyproject.toml'
   pull_request:
     paths:
       - 'rl/**/*.py'
