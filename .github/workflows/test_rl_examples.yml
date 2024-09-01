@@ -25,7 +25,7 @@ jobs:
       with:
         python-version: "3.12"
     - name: Install uv
-      run: pip install uv
+      run: pip install --system uv
     - name: Install dependencies
       run: uv pip install mesa pytest
     - name: Install RL dependencies
