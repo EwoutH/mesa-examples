@@ -23,6 +23,7 @@ rl_example = [
     "mesa",
     "tensorboard",
     "ray",
+    "dm_tree",
 ]
 
 [build-system]

@@ -24,10 +24,12 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: "3.12"
+    - name: Install uv
+      run: pip install uv
     - name: Install dependencies
-      run: pip install mesa pytest
+      run: uv pip install mesa pytest
     - name: Install RL dependencies
-      run: pip install .[rl_example]
+      run: uv pip install .[rl_example]
     - name: Test with pytest
       run: pytest -rA -Werror test_rl_examples.py
 
